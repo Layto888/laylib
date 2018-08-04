@@ -1,11 +1,11 @@
 # laylib package for pygame 
 
-This package is made to fast prototype your games on pygame.
-It lets you focus on the game engine itself, so you dont have
-to take care about setting up the window and loading data (images,
+This package is made to fast prototype your multimedia applications like 
+games on pygame. It lets you focus on the game engine itself, so you dont have
+to take care about several details like setting up the window and loading data (images,
 sound, font, fx, music...).
-All you need to do is put your resources into a specific data folder
-and use them in your game engine class. 
+All you need to do is to put your resources into a specific data folder and use them 
+in your game class 'MyEngine()' . 
 
 More than that, all repetitive code (main loop, getting the delta time, 
 closing the window, drawing text...) are already described and ready to use in the 

@@ -50,8 +50,12 @@ Usage example:
 First, install the dependencies:
 - Python3 (3.1 or later) <http://www.python.org>
 - Pygame 1.9.1 or later <http://pygame.org/download.shtml>
-- pip install laylib
 
+Then install laylib: 
+
+```os
+  pip install laylib
+```
 Or alternatively, you can just copy the "laylib" folder into the same
 directory as the Python program that uses it.
 

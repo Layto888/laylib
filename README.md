@@ -17,9 +17,9 @@ default engine.
          By default the pygame display,the mixer and the font are initialized.
 
      2)- load_complete(self, instance, dataFolder=None, fileLevels=None):
-         This is the second class to call on your main file
-         to load your resources if any.(see load_complete for params
-         description)
+         This is the second method to call on your main file
+         to load your resources if any.(see load_complete for parameters
+         description).
 
      # Note that this is important to respect the following scheme
      for all types of game:

@@ -2,7 +2,7 @@
 
 This package is made to fast prototype your multimedia applications like games on pygame. 
 Write clean and pragmatic design. It lets you focus on the game engine itself, so you dont have
-to take care about several details like setting up the window and loading and cheking data (images,
+to take care about several details like setting up the window, loading and cheking data (images,
 sound, font, fx, music, resources names...).
 All you need to do is to put your resources into a specific data folder and use them 
 in your game class 'MyEngine()'. 

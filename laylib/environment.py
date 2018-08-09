@@ -1,68 +1,28 @@
 """
-# laylib-pygame package:
+@Author: Amardjia Amine
+@Mail: amardjia.amine@gmail.com
+@Licence: MIT
+https://github.com/Layto888/laylib-1.0
 
-This package is made to fast prototype your games on pygame.
-It lets you focus on the game engine itself, so you dont have
-to take care about setting up the window and loading data (images,
-sound, font, fx, music...).
-All you need to do is put your resources into a specific data folder
-and use them in your game engine class.
+# laylib for pygame package:
 
-More than that, all that is repetitive code like (main loop, the delta time,
-the closing event of window...) are already described and ready to use in the
-default engine.
+This package is made to fast prototype your multimedia applications
+like games on pygame.
 
-     1)- Environment class:
-         This is the first class to call on your main file, to set the
-         pygame environement.
-         By default the pygame display,the mixer and the font are initialized.
+Write clean and pragmatic design. It lets you focus on the game engine
+itself, so you dont have to take care about several details like setting
+up the window, loading and cheking data (images, sound, font, fx, music,
+resources names...).
+All you need to do is to put your resources into a specific data folder
+and use them in your game class 'MyEngine()'.
 
-     2)- load_complete(self, instance, dataFolder=None, fileLevels=None):
-         This is the second class to call on your main file
-         to load your resources if any.(see load_complete for params
-         description)
+You don't need to reinvent the wheel, some repetitive parts of code
+(main loop, getting the delta time, closing the window, drawing text...)
+are already described and ready to use in the default engine.
 
-     # Note that this is important to respect the following scheme
-     for all types of game:
-         1- Set the environement
-         2- load all resources only once.
-         3- main loop function called by an instance of your game engine.
-         4- at the end of the game destroy resources and quit the environement.
-         Your main file should always look like the following example:
-    
-Usage example:
-
-```python
->>> from laylib import Environment
->>> from engine import Engine
->>>
->>> def main():
->>> demo = Environment(800, 600, True, 'My game')
->>> demo.load_complete(Engine(), 'data', 'resources.res')
->>> demo.gInstance.main_loop()
->>> demo.destroy()
-
->>> if __name__ == "__main__":
->>>     main()
-```
-	
-INSTALLATION
-
-First, install the dependencies:
-- Python3 (3.1 or later) <http://www.python.org>
-- Pygame 1.9.1 or later <http://pygame.org/download.shtml>
-
-Then install laylib-pygame using pip install laylib-pygame or 
-Alternatively, you can just place the "laylib-pygame" folder into the same
-directory as the Python program that uses it.
-
-USAGE
-
-For usage see examples provided with laylib-pygame. 
-All other parts of documentation are described in the source file.
-
+See the README.MD for more details.
 """
- 
+
 __version__ = "1.0"
 
 import pygame as pg
@@ -120,27 +80,17 @@ class Environment(object):
             persistenceLayer=None,
             fileLevels=None):
         """
-        the instance gInstance (Engine() class of the game must contain:
-        1 -- load_game(dataFolder, persistenceLayer)
-        2 -- destroy_game()
-        3 -- main_loop()
-        Optional:
-        4 -- load_levels(dataFolder, fileLevels)
-
         -- load_complete():
         copy an instance of your game engine and use it in the main.py
-        the Engine class of the game MUST contain:
 
         1) - load_game(dataFolder, persistenceLayer):
-
         this function load game resources and get infos from persistence
         layer, this function must call the Resources class to load all the
         data from the data folder.
         optional if you have no data to load. Just keep it empty
-        by default on the engine
+        by default on the engine.
 
-        # load_game(--, --) PARAMS:
-
+        #PARAMS:
         * dataFolder: this folder contains all the resources:(sound,
         images font..etc)
 

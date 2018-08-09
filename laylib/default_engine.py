@@ -9,13 +9,13 @@ and let you focus on the game logic itself. The DefaultEngine contain:
 A - PUBLIC ATTRIBUTES TO USE:
 -----------------------------------
 
-self.running: to control when exit the main loop and the environement.
+self.running: to control when exit the main loop and the environment.
 ------------
 self.playing: to exit only the main loop and keep tracking event.
 ------------
 self.screen: contain the main screen
 ------------
-self.dt:     the detla time float to control your game latency
+self.dt:     the delta time float to control your game latency
 ------------
 self.clock:  to tick FPS and keep tracking time
 ------------
@@ -111,17 +111,17 @@ class DefaultEngine:
     def load_game(self, dataFolder, persistenceLayer):
         """ load resources:
         this  function fetch  and  load whatever resources we need.
-        - The "dataFolder"  MUST CONTAIN the persistenceLayer file.
-        - The environement.py call this method on the main file, if
+        - The "dataFolder"  WILL CONTAIN the persistenceLayer file.
+        - The environment.py call this method on the main file, if
         a dataFolder  and  a  persistenceLayer are specified on the
-        demo.load_complete() function. (see main file example).
+        demo.load_complete() function. (see main file examples).
         """
         self.res = Resources(dataFolder)
         data = self.res.get(persistenceLayer)
         self.img = self.res.img.loadGroup(data['imgList'], True)
         self.snd = self.res.snd.loadGroup(data['sndList'])
         self.fnt = self.res.fnt.loadGroup(data['fntList'])
-        self.music_titles = self.res.msc.get_playList(data['mscList'])
+        self.msc = self.res.msc.get_playList(data['mscList'])
         self.res.show()
 
     def load_levels(self, dataFolder, fileLevels):

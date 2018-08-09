@@ -4,11 +4,12 @@
             images, fonts..etc and some util-functions to print text in
             the screen & stuffs like that.
 TODO:
+            - improve  music class (play list choose...)
             - manage the image.set_colorkey((255, 255, 255)) for transparency
             - args values for: load_global() & destroy_global() functions
-            this function is obsoléte...automate it.
+            this function is obsolete...automate it.
             - unittest module for resources.
-            - add description of how to parse data and creat persistence layer
+            - add description of how to parse data and create persistence layer
             - add setter method for constants:
                                                 DEFAULT_FX_VOLUME
                                                 DEFAULT_MUSIC_VOLUME
@@ -111,7 +112,7 @@ class Resources(object):
         call this method.
         """
         fileName = os.path.join(self.data_folder, fileName)
-        self.pm._resources_save(self, fileName)
+        self.pm._resources_save(fileName)
 
     def get(self, fileName):
         fileName = os.path.join(self.data_folder, fileName)
@@ -133,16 +134,20 @@ class PersistenceManager(object):
     - load the persitence layer and return the data structure
     - The file is created into a binary format using pickle module.
     """
-
+    _PARSER_VERSION = '0.2.1'
     # class constants:
-    IMAGE_TYPE = ('bmp', 'jpg', 'png', 'jpeg', 'tiff', 'gif', 'ico')
-    MUSIC_TYPE = ('mp3', 'wma')
-    FX_TYPE = ('ogg', 'wav')
-    FONT_TYPE = ('ttf', 'otf', 'ttc')
+    IMAGE_TYPE = ['bmp', 'jpg', 'png', 'jpeg', 'tiff', 'gif', 'ico']
+    IMAGE_TYPE += [x.upper() for x in IMAGE_TYPE]
+    MUSIC_TYPE = ['mp3', 'wma', 'flac']
+    MUSIC_TYPE += [x.upper() for x in MUSIC_TYPE]
+    FX_TYPE = ['ogg', 'wav', 'midi']
+    FX_TYPE += [x.upper() for x in FX_TYPE]
+    FONT_TYPE = ['ttf', 'otf', 'ttc']
+    FONT_TYPE += [x.upper() for x in FONT_TYPE]
     # theses values could be edited directly from this class.
     DEFAULT_FX_VOLUME = 0.8
     DEFAULT_MUSIC_VOLUME = 2.0
-    DEFAULT_FONT_SIZE = 12
+    DEFAULT_FONT_SIZE = 20
 
     def __init__(self, folder='data'):
         self.parser = {
@@ -160,7 +165,7 @@ class PersistenceManager(object):
         """
         show the content of parser, this function is useful
         when you want to know the index of each resource.
-        callable from Ressource class
+        callable from Ressource class.
         """
         self.pp.pprint(self.parser)
 
@@ -168,7 +173,7 @@ class PersistenceManager(object):
         """
         sort the group list
         """
-        self.parser["version"] = str(self.__version)
+        self.parser["version"] = str(self._PARSER_VERSION)
 
         for file in self.files_list:
             name, ext = file.split('.')
@@ -284,8 +289,18 @@ class Music(object):
         """ return the play list titles """
         playlist = []
         for title in musicList:
-            playlist.append(os.path.join(self.data_folder, title))
+            playlist.append(os.path.join(self.data_folder, title[SOUND_TITLE]))
+        # queue
+        if playlist:
+            first_music = playlist[0]
+            pg.mixer.music.load(first_music)
+        for track in playlist:
+            if track != first_music:
+                pg.mixer.music.queue(track)
         return playlist
+
+    def play(self, loops=0, start=0.0):
+        pg.mixer.music.play()
 
 
 class Font(object):
@@ -318,6 +333,3 @@ class Font(object):
         functions to print text in the screen with white by default.
         """
         self.screen.blit(font.render(message, True, color), vect)
-
-    def p(self):
-        print(self.screen)

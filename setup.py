@@ -11,7 +11,7 @@ setuptools.setup(
     long_description=_long_description,
     author="Amardjia Amine",
     author_email="amardjia.amine@gmail.com",
-    url="https://github.com/Layto888/laylib-pygame",
+    url="https://github.com/Layto888/laylib-1.0",
     packages=setuptools.find_packages(),
     classifiers=(
         "Programming Language :: Python :: 3",

@@ -13,6 +13,7 @@ name = "laylib"
 if __version__ != _laylib_version:
     raise Exception("Version number mismatch", __version__, _laylib_version)
 
+
 __all__ = [
 
     # Modules:

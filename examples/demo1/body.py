@@ -28,7 +28,7 @@ class Body(pg.sprite.Sprite):
         self.last_respawn = pg.time.get_ticks()
 
     def update(self, dt):
-        """ this will update Body """
+        """this will update Body """
         self.vel += self.acc * dt
         self.cap_velocity()
         self.pos += self.vel
@@ -36,7 +36,7 @@ class Body(pg.sprite.Sprite):
         bondary_limit(self.pos)
 
     def cap_velocity(self):
-        """ limit max speed """
+        """limit max speed """
         if self.vel.x > MAX_VEL:
             self.vel.x = MAX_VEL
         if self.vel.y > MAX_VEL:

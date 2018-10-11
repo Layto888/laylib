@@ -8,7 +8,7 @@ TODO:
             - manage the image.set_colorkey((255, 255, 255)) for transparency
             - args values for: load_global() & destroy_global() functions
             this function is obsolete...automate it.
-            - unittest module for resources.
+            - pytest module for resources.
             - add description of how to parse data and create persistence layer
             - add setter method for constants:
                                                 DEFAULT_FX_VOLUME

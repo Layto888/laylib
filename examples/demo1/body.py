@@ -51,7 +51,7 @@ class Background(pg.sprite.Sprite):
         self.pos = pos
 
 
-def bondary_limit(position: vect2d) -> None:
+def bondary_limit(position):
     """
     keep any object inside the screen
     """

@@ -52,6 +52,11 @@ First, install the dependencies:
 - Python3 (3.1 or later) <http://www.python.org>
 - Pygame 1.9.1 or later <http://pygame.org/download.shtml>
 
+Or run in terminal:
+```os
+  pip install -r requirements.txt
+```
+
 Then install laylib: 
 
 ```os

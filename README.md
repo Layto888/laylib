@@ -67,7 +67,12 @@ For more details, all other parts of documentation are described in the source f
 
 ### TODO
 
- - [ ] add test module for laylib.
+ - [ ] add test module for laylib resources.
  - [ ] more automation for resources management
- - [ ] improve util.py module
+ - [x] improve util.py module
  - [x] add more examples for demo
+
+Changelog:
+
+- Now we can set the 'time_unit' to change the delta_time unit when using the class: 	DefaultEngine
+

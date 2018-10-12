@@ -21,9 +21,15 @@ You don't need to reinvent the wheel, some repetitive parts of code
 are already described and ready to use in the default engine.
 
 See the README.MD for more details.
+
+ChangeLOG: 
+
+- Now we can set the 'time_unit' to change the delta_time unit.
+
 """
 
-__version__ = "1.0"
+
+__version__ = "1.0.1"
 
 import pygame as pg
 import logging

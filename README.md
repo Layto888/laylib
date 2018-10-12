@@ -67,7 +67,7 @@ For more details, all other parts of documentation are described in the source f
 
 ### TODO
 
- - [ ] add unittest module.
+ - [ ] add test module for laylib.
  - [ ] more automation for resources management
  - [ ] improve util.py module
  - [x] add more examples for demo

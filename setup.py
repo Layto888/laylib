@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="laylib",
-    version="1.0",
+    version="1.0.1",
 	license="MIT License",
     description="A 2-D game engine for Python",
     long_description=_long_description,

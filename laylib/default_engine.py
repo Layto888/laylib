@@ -71,7 +71,7 @@ import pygame as pg
 from laylib.resources import Resources
 
 
-class DefaultEngine:
+class DefaultEngine(object):
     """
     Use it as a base class for your game engine.
     """
@@ -127,7 +127,7 @@ class DefaultEngine:
     def load_levels(self, dataFolder, fileLevels):
         """
         If the prototype contain levels use this function.
-        Overload this function.
+        Overload this.
         """
         pass
 

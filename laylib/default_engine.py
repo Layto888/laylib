@@ -84,6 +84,19 @@ class DefaultEngine(object):
         self.clock = pg.time.Clock()
         self.img = self.snd = self.fnt = None
         self.all_sprites = None
+        self._time_unit = 1000.0
+
+    """
+    time unit decorators to modify the delta time
+    """
+    @property
+    def time_unit(self):
+        return self._time_unit
+
+    @time_unit.setter
+    def time_unit(self, value):
+        print 'called setter'
+        self._time_unit = value
 
     def main_loop(self):
         while self.running:
@@ -91,7 +104,7 @@ class DefaultEngine(object):
             self.event_listener()
             self.update()
             self.draw()
-            self.dt = (pg.time.get_ticks() - t) / 1000.0
+            self.dt = (pg.time.get_ticks() - t) / self._time_unit
 
     def event_listener(self):
         """

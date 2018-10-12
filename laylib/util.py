@@ -4,7 +4,7 @@ from pygame.math import Vector2 as vect2d
 
 
 """
-util Desc file: n° (0.2):
+util Desc file: n (0.2):
 lib for rapid prototyping games,
 contain some useful functions like dstance between two vectors.
 TODO:
@@ -17,30 +17,30 @@ Author:     Amardjia Amine (Goutted)
 """
 
 
-def dist(v1: vect2d, v2: vect2d) -> float:
+def dist(v1, v2):
     """ distance between two vectors. """
     d = ((v2.x - v1.x)**2 + (v2.y - v1.y)**2) ** 0.5
     return d
 
 
-def rad2deg(rad: float) -> float:
+def rad2deg(rad):
     """ from radian to degree """
     return rad * 180.0 / math.pi()
 
 
-def deg2rad(deg: float) -> float:
+def deg2rad(deg):
     """ from degree to radian """
     return deg * 3.14 / 180.0
 
 
-def rotate(v: vect2d, angle: float) -> vect2d:
+def rotate(v, angle):
     """ rotates a point p around the point origin."""
     vector = ((v.x * math.cos(angle) - v.y * math.sin(angle)),
               (v.x * math.sin(angle) + v.x * math.cos(angle)))
     return vector
 
 
-def rotate2p(v1: vect2d, v2: vect2d, angle: float) -> vect2d:
+def rotate2p(v1, v2, angle):
     """
     this function rotates a point p1
     around the point p0 with a certain angle."""
@@ -65,13 +65,13 @@ def rotateDeg(image, angle):
     return rot_image
 
 
-def xIntersect(body1: pg.Rect, body2: pg.Rect) -> bool:
+def xIntersect(body1, body2):
     """ x Intersection between two Rects: """
     return (body1.x + body1.w) < (body2.x + body2.w) * 0.5 or \
         (body1.x + body1.w) >= (body2.x + body2.w) * 0.5
 
 
-def yIntersect(body1: pg.Rect, body2: pg.Rect) -> bool:
+def yIntersect(body1, body2):
     """ y Intersection between two Rects: """
     return (body1.y + body1.h) < (body2.y + body2.h) or \
         (body1.y + body1.h) >= (body2.y + body2.h)

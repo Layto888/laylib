@@ -1,4 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![](https://img.shields.io/badge/Version-1.0.1-red.svg)](https://pypi.org/project/laylib/)
+
 # laylib package for pygame 
 
 This package is made to fast prototype your multimedia applications like games on pygame. 

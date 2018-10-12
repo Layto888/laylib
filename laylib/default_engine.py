@@ -55,7 +55,7 @@ this function is called on the main function.
 this function is called automatically and
 will load all the resources found in the data folder of resources.
 
-3) - load_levels(self, dataFolder, fileLevels):
+3) - load_levels(self, dataFolder, fileLevels) :
 this function if your game contain file levels or file,
 best score or any save.
 

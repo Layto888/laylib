@@ -16,6 +16,10 @@ class Engine(DefaultEngine):
         super().__init__()
         self.body = None
         self.all_sprites = pg.sprite.Group()
+        # setting new delta time, we're dividing pg.time.get_ticks() by 500.0
+        # the default value is 1000.0
+        self.time_unit = 500.0
+        print("time unit = {}".format(self.time_unit))
 
     def update(self):
         if not self.playing:

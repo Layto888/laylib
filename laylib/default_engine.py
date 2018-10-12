@@ -95,8 +95,10 @@ class DefaultEngine(object):
 
     @time_unit.setter
     def time_unit(self, value):
-        print 'called setter'
-        self._time_unit = value
+        if value > 0.0:
+            self._time_unit = value
+        else:
+            self._time_unit = 1000.0
 
     def main_loop(self):
         while self.running:

@@ -8,7 +8,7 @@ Github: ---
 
 TODO: -
 """
-from .. / laylib import Environment
+from laylib import Environment
 from engine import Engine
 from settings import WIDTH, HEIGHT
 

@@ -2,7 +2,7 @@
 @Author: Amardjia Amine
 @Mail: amardjia.amine@gmail.com
 @Licence: MIT
-https://github.com/Layto888/laylib-1.0
+https://github.com/Layto888/laylib-1.1.1
 
 # laylib for pygame package:
 
@@ -29,7 +29,7 @@ ChangeLOG:
 """
 
 
-__version__ = "1.0.1"
+__version__ = "1.1.1"
 
 import pygame as pg
 import logging

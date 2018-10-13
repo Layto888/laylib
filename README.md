@@ -32,7 +32,7 @@ default engine.
          4- at the end of the game destroy resources and quit the environement.
          Your main file should always look like the following example:
      
-## Usage example:
+## Usage example
 
 ```python
 >>> from laylib import Environment

@@ -76,6 +76,8 @@ For more details, all other parts of documentation are described in the source f
  - [x] add more examples for demo
 
 ### Release History
+* 1.1.3
+    * Bug version package fix (init.py file).
 * 1.1.2
     * Removed functions: `load_global()`/`destroy_global()` from Resources class.
     * Bug version fix (setup.py file).
@@ -91,4 +93,5 @@ For more details, all other parts of documentation are described in the source f
 Amardjia Amine – amardjia.amine@gmail.com
 Distributed under the MIT license. See ``LICENSE`` for more information.
 [https://github.com/Layto888]
+
 

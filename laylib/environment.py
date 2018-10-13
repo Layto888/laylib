@@ -28,10 +28,11 @@ Release History:
 - v1.1.1 Now we can set the 'time_unit' to change the delta_time unit.
 - v1.1.2 Removed functions: load_global/destroy_global from Resources class.
          + Bug version fix (setup.py file).
+- v1.1.3 Bug version fix (init.py)
 """
 
 
-__version__ = "1.1.2"
+__version__ = "1.1.3"
 
 import pygame as pg
 import logging

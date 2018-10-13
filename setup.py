@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="laylib",
-    version="1.1.2",
+    version="1.1.3",
 	license="MIT License",
     description="A 2-D game engine for Python",
     long_description=_long_description,
     author="Amardjia Amine",
     author_email="amardjia.amine@gmail.com",
-    url="https://github.com/Layto888/laylib-1.1.2",
+    url="https://github.com/Layto888/laylib-1.1.3",
     packages=setuptools.find_packages(),
     classifiers=(
         "Programming Language :: Python :: 3",

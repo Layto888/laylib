@@ -6,7 +6,7 @@ from laylib.default_engine import DefaultEngine
 from laylib.resources import Resources
 
 __author__ = 'Amardjia Amine'
-__version__ = '1.1.1'
+__version__ = '1.1.3'
 
 name = "laylib"
 

@@ -31,7 +31,7 @@ Release History:
 """
 
 
-__version__ = "1.1.1"
+__version__ = "1.1.2"
 
 import pygame as pg
 import logging

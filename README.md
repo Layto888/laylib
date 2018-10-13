@@ -66,12 +66,10 @@ Or alternatively, you can just copy the "laylib" folder into the same
 directory as the Python program that uses it.
 
 ### USAGE
-
 For usage see examples provided with laylib. 
 For more details, all other parts of documentation are described in the source file.
 
 ### TODO
-
  - [ ] add test module for laylib resources.
  - [ ] more automation for resources management
  - [x] improve util.py module
@@ -90,9 +88,7 @@ For more details, all other parts of documentation are described in the source f
     * Work in progress
 
 ## Meta
-
 Amardjia Amine – amardjia.amine@gmail.com
-
 Distributed under the MIT license. See ``LICENSE`` for more information.
 [https://github.com/Layto888]
 

@@ -91,7 +91,7 @@ For more details, all other parts of documentation are described in the source f
 
 ## Meta
 Amardjia Amine – amardjia.amine@gmail.com
-Distributed under the MIT license. See ``LICENSE`` for more information.
-[https://github.com/Layto888]
+Distributed under the MIT license.[https://github.com/Layto888]
+
 
 

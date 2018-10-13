@@ -1,6 +1,6 @@
 """
 Demo 01 Made with python and pygame
-to test and improve the laylib-pygame framwork for fast game prototyping.
+to test and improve the laylib-pygame framework for fast game prototyping.
 ----
 Author: Amardjia Amine
 Date: 31/07/18

@@ -6,9 +6,8 @@ for your main engine game class, for fast prototyping your engine
 and let you focus on the game logic itself. The DefaultEngine contain:
 
 -----------------------------------
-A - PUBLIC ATTRIBUTES TO USE:
+[A] - PUBLIC ATTRIBUTES TO USE:
 -----------------------------------
-
 self.running: to control when exit the main loop and the environment.
 ------------
 self.playing: to exit only the main loop and keep tracking event.
@@ -27,43 +26,40 @@ self.img, self.snd, self.fnt:
 these variables contain the whole resources data your game need.
 
 
--------------------------------
-B - PUBLIC METHODS TO OVERRIDE:
--------------------------------
-
-1) - def event_listener():
-your game engine class MUST contain this function name
-override this function on your engine class
-if you need to manage events in your program.
-
-2) - def update():
+---------------------------------
+[B] - PUBLIC METHODS TO OVERRIDE:
+---------------------------------
+1)- def update():
 override this function in your main engine class to update your whole game.
 
-3)- def draw():
+2)- def draw():
 override this function in your main engine class to draw the whole graphics.
 
 
 ----------------------------
-C - PRIVATE METHODS:
+[C] - PRIVATE METHODS:
 ----------------------------
-
 1) - def main_loop():
 Is the global loop to manage event, update and draw all stuffs.
 this function is called on the main function.
 
-2) - load_game(self, dataFolder, persistenceLayer):
+2) - def event_listener():
+Control the main event of the window:
+Use key 'ESC' to quit.
+Use variable 'self.playing' to exit the main loop of the game (ex:to pause)
+
+3) - load_game(self, dataFolder, persistenceLayer):
 this function is called automatically and
 will load all the resources found in the data folder of resources.
 
-3) - load_levels(self, dataFolder, fileLevels) :
+4) - load_levels(self, dataFolder, fileLevels) :
 this function if your game contain file levels or file,
 best score or any save.
 
-4)- destroy_game(self):
+5)- destroy_game(self):
 called by default to destroy all resources.
 
 (see examples folder for some usage example).
-
 """
 
 

@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![](https://img.shields.io/badge/version-1.1.2-red.svg)](https://pypi.org/project/laylib/)
+[![](https://img.shields.io/badge/version-1.1.3-red.svg)](https://pypi.org/project/laylib/)
 
 # laylib package for pygame 
 

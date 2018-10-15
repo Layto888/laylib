@@ -9,5 +9,5 @@ def rotate(v, angle):
     return vector
 
 
-x = vect2d(2.5, 1.1)
-print(rotate(x, 0.0))
+x = vect2d(6.3, 1.5)
+print(rotate(x, -8))

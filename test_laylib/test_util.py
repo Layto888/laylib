@@ -49,3 +49,15 @@ def test_deg2rad(deg, expected):
 @pytest.mark.skip(reason="no way of currently testing this")
 def test_rotateDeg():
     pass
+
+
+@pytest.mark.parametrize("vector, rad_angle, expected", [
+    (vect2d(2.55, 1.66), 0.0, (2.55, 1.66)),
+    (vect2d(2.11, 3.01), 6.28319, (2.11, 3.01)),
+    (vect2d(1.3, -2.0), 11.3, (-1.51, -1.83)),
+    (vect2d(6.3, 1.5), -8, (0.5673, -6.4512)
+     )
+])
+def test_rotate(vector, rad_angle, expected):
+    data_list = util.rotate(vector, rad_angle)
+    assert(data_list == pytest.approx(expected, 0.01))

@@ -1,9 +1,9 @@
 import math
 
 
-def rad2deg(rad):
-    """ from radian to degree """
-    return rad * 180 / math.pi
+def deg2rad(deg):
+    """ from degree to radian """
+    return deg * math.pi / 180
 
 
-print(rad2deg(0.81))
+print(deg2rad(0.28))

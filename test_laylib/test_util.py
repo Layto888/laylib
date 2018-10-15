@@ -21,3 +21,12 @@ def test_dist(vector1, vector2, expected):
 ])
 def test_rad2deg(rad, expected):
     assert(util.rad2deg(rad) == pytest.approx(expected, 0.01))
+
+
+@pytest.mark.parametrize("deg, expected", [
+    (0, 0),
+    (25.2, 0.43),
+    (0.28, 0.0048)
+])
+def test_deg2rad(deg, expected):
+    assert(util.deg2rad(deg) == pytest.approx(expected, 0.1))

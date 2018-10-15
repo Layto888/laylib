@@ -5,6 +5,19 @@ from laylib import util
 from pygame.math import Vector2 as vect2d
 
 
+class Body(object):
+    def __init__(self, x, y, w, h):
+        self.x = x
+        self.y = y
+        self.w = w
+        self.h = h
+
+
+@pytest.fixture
+def null_body():
+    return Body(0, 0, 0, 0)
+
+
 @pytest.mark.parametrize("vector1, vector2, expected", [
     (vect2d(-1.0, 1.0), vect2d(-1.0, 1.0), 0.0),
     (vect2d(-2.1, 3.0), vect2d(1.0, -5.1), 8.672),
@@ -30,3 +43,9 @@ def test_rad2deg(rad, expected):
 ])
 def test_deg2rad(deg, expected):
     assert(util.deg2rad(deg) == pytest.approx(expected, 0.1))
+
+
+# graphics stuffs : TODO -- test load image rot
+@pytest.mark.skip(reason="no way of currently testing this")
+def test_rotateDeg():
+    pass

@@ -31,7 +31,7 @@ def deg2rad(deg):
 def rotate(v, angle):
     """ rotates a point p around the point origin."""
     vector = ((v.x * math.cos(angle) - v.y * math.sin(angle)),
-              (v.x * math.sin(angle) + v.x * math.cos(angle)))
+              (v.x * math.sin(angle) + v.y * math.cos(angle)))
     return vector
 
 

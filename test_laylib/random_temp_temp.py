@@ -1,9 +1,13 @@
 import math
+from pygame.math import Vector2 as vect2d
 
 
-def deg2rad(deg):
-    """ from degree to radian """
-    return deg * math.pi / 180
+def rotate(v, angle):
+    """ rotates a point p around the point origin."""
+    vector = ((v.x * math.cos(angle) - v.y * math.sin(angle)),
+              (v.x * math.sin(angle) + v.y * math.cos(angle)))
+    return vector
 
 
-print(deg2rad(0.28))
+x = vect2d(2.5, 1.1)
+print(rotate(x, 0.0))

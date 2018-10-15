@@ -1,5 +1,6 @@
 TODO
 *pyc
 __pycache__
+/.pytest_cache
 vienv
 CHANGELOG

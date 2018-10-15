@@ -61,3 +61,25 @@ def test_rotateDeg():
 def test_rotate(vector, rad_angle, expected):
     data_list = util.rotate(vector, rad_angle)
     assert(data_list == pytest.approx(expected, 0.01))
+
+
+@pytest.mark.parametrize("vector1, vector2, rad_angle, expected", [
+    (vect2d(1, 1), vect2d(2, 2), 0, (2, 2)),
+    (vect2d(6.3, 11.5), vect2d(8.6, 3.0), 1.2, (15.0558, 10.5636)),
+    (vect2d(-5.5, -8.0), vect2d(2.0, 3.0), 4.0, (-2.0775, -20.8661)),
+    (vect2d(3.0, 5.0), vect2d(2.0, 2.0), 6.28319, (2.0, 2.0)
+     )
+])
+def test_rotate2p(vector1, vector2, rad_angle, expected):
+    data_list = util.rotate2p(vector1, vector2, rad_angle)
+    assert(list(data_list) == pytest.approx(expected, 0.01))
+
+
+@pytest.mark.skip(reason="later")
+def test_xIntersect():
+    pass
+
+
+@pytest.mark.skip(reason="later")
+def test_yIntersect():
+    pass

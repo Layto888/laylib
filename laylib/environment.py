@@ -20,19 +20,10 @@ You don't need to reinvent the wheel, some repetitive parts of code
 are already described and ready to use in the default engine.
 
 See the README.MD for more details.
-
-Release History:
-
-- v0.0.1 Work in progress
-- v0.1   The first proper release
-- v1.1.1 Now we can set the 'time_unit' to change the delta_time unit.
-- v1.1.2 Removed functions: load_global/destroy_global from Resources class.
-         + Bug version fix (setup.py file).
-- v1.1.3 Bug version fix (init.py)
 """
 
 
-__version__ = "1.1.3"
+__version__ = "1.1.4"
 
 import pygame as pg
 import logging

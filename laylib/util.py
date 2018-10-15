@@ -20,12 +20,12 @@ def dist(v1, v2):
 
 def rad2deg(rad):
     """ from radian to degree """
-    return rad * 180.0 / math.pi()
+    return rad * 180 / math.pi
 
 
 def deg2rad(deg):
     """ from degree to radian """
-    return deg * 3.14 / 180.0
+    return deg * 3.14 / 180
 
 
 def rotate(v, angle):

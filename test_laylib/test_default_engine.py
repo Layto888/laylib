@@ -15,6 +15,7 @@ def surface_env(scope="function"):
         logging.info('unable to init display pygame')
     set_env = pg.display.set_mode((200, 200))
     yield set_env
+    # pg.quit()
 
 
 class _ObjClass(default_engine.DefaultEngine):

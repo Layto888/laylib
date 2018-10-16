@@ -70,7 +70,7 @@ For usage see examples provided with laylib.
 For more details, all other parts of documentation are described in the source file.
 
 ### TODO
- - [ ] add test module for laylib resources.
+ - [ ] add test module for laylib.
  - [ ] more automation for resources management
  - [x] improve util.py module
  - [x] add more examples for demo

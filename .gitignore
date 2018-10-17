@@ -2,6 +2,9 @@ TODO
 *pyc
 __pycache__
 /.pytest_cache
+build/
+dist/
+laylib.egg-info/
 vienv
 CHANGELOG
 README.md

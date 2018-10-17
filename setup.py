@@ -8,7 +8,6 @@ with open("README.rst", "r") as fh:
 
 setuptools.setup(
     name="laylib",
-    packages=['laylib'],
     version=_version_,
     license="MIT License",
     description="A 2-D engine for Python and pygame",

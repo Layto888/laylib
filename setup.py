@@ -3,11 +3,12 @@ import setuptools
 _version_ = "1.1.4"
 _url_ = "https://github.com/Layto888/laylib-" + _version_
 
-with open("README.md", "r") as fh:
+with open("README.rst", "r") as fh:
     _long_description = fh.read()
 
 setuptools.setup(
     name="laylib",
+    packages=['laylib'],
     version=_version_,
     license="MIT License",
     description="A 2-D engine for Python and pygame",

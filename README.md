@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![](https://img.shields.io/badge/version-1.1.3-red.svg)](https://pypi.org/project/laylib/)
+[![](https://img.shields.io/badge/version-1.1.4-red.svg)](https://pypi.org/project/laylib/)
 
 # laylib package for pygame 
 
@@ -76,6 +76,8 @@ For more details, all other parts of documentation are described in the source f
  - [x] add more examples for demo
 
 ### Release History
+* 1.1.4
+    * 
 * 1.1.3
     * Bug version package fix (init.py file).
 * 1.1.2

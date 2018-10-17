@@ -45,7 +45,7 @@ def test_time_setget(class_default_engine):
     assert class_default_engine.time_unit == 1000.0
 
 
-@pytest.mark.skip(reason="We can't exit the main_llop this way")
+@pytest.mark.skip(reason="We can't exit the main_loop this way")
 def test_delta_time_main_loop(class_default_engine):
     pass
 

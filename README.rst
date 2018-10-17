@@ -6,6 +6,11 @@ laylib package for pygame
 
 .. image:: https://img.shields.io/badge/version-1.1.4-red.svg
 	:target: https://pypi.org/project/laylib
+
+.. image:: https://travis-ci.org/Layto888/laylib.svg?branch=master
+	:target: https://travis-ci.org/Layto888/laylib
+
+
  
 
 
@@ -43,7 +48,7 @@ INSTALLATION
 ------------
 
 First, install the dependencies:
-- Python3 (3.1 or later) <http://www.python.org>
+- Python3 (3.5 or later) <http://www.python.org>
 - Pygame 1.9.1 or later <http://pygame.org/download.shtml>
 Or run in terminal:
 

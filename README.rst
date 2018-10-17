@@ -13,7 +13,6 @@ laylib package for pygame
 
  
 
-
 This package is made to fast prototype your multimedia applications like games on pygame. 
 Write clean and pragmatic design. It lets you focus on the game engine itself, so you dont have
 to take care about several details like setting up the window, loading and cheking data (images,
@@ -74,7 +73,7 @@ TODO
 ----
 # [checkbox:unchecked]
  - [x] add test module for laylib.
- - []  more automation for resources management
+ - [ ] more automation for resources management
  - [x] improve util.py module
  - [x] add more examples for demo
 
@@ -82,6 +81,7 @@ Release History
 ---------------
 
 * 1.1.4
+    * Add Travis CI file
     * bug fix rotate function util.py file
     * changed value 3.14 to math.pi deg2rad function util.py
     * add complete test module

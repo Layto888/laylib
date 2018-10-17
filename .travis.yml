@@ -1,4 +1,5 @@
 language: python
+
 python:
   - "3.1"
   - "3.4"
@@ -7,9 +8,16 @@ python:
   - "3.6"
   - "3.6-dev"  # 3.6 development branch
   - "3.7-dev"  # 3.7 development branch
-# command to install dependencies
+before_install:
+    - sudo apt-get update -qq
+    - sudo apt-get build-dep -qq python-pygame
+    - sudo apt-get install -qq python-pygame
 install:
-  - pip install -r requirements.txt
+    - pip install -r .travis_requirements.txt
+
+virtualenv:
+    system_site_packages: true
+
 # command to run tests
 script:
   - pytest -v

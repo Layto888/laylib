@@ -37,7 +37,6 @@ def test_surface_env(surface_env):
 
 
 def test_default_engine_attr(class_default_engine):
-
     assert isinstance(class_default_engine, default_engine.DefaultEngine)
     assert class_default_engine.running is True
     assert class_default_engine.playing is False

@@ -71,7 +71,6 @@ For more details, all other parts of documentation are described in the source f
 
 TODO
 ----
-# [checkbox:unchecked]
  - [x] add test module for laylib.
  - [ ] more automation for resources management
  - [x] improve util.py module

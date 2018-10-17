@@ -1,7 +1,7 @@
 import setuptools
 
 _version_ = "1.1.4"
-_url_ = "https://github.com/Layto888/laylib-" + _version_
+_url_ = "https://github.com/Layto888/laylib"
 
 with open("README.rst", "r") as fh:
     _long_description = fh.read()

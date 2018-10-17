@@ -77,7 +77,10 @@ Release History
 ---------------
 
 * 1.1.4
-    * 
+    * bug fix rotate function util.py file
+    * changed value 3.14 to math.pi deg2rad function util.py
+    * add complete test module
+    * changed README.md to README.rst
 * 1.1.3
     * Bug version package fix (init.py file).
 * 1.1.2

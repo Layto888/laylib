@@ -102,7 +102,6 @@ Meta
 ----
 Amardjia Amine – amardjia.amine@gmail.com
 Distributed under the MIT license.
-[https://github.com/Layto888]ok
 
 
 

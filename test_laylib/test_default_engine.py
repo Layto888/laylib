@@ -7,7 +7,7 @@ from laylib import default_engine
 logging.basicConfig(level=logging.INFO,
                     format='%(levelname)s: %(message)s')
 
-
+"""
 @pytest.fixture
 def surface_env(scope="function"):
     pg.init()
@@ -16,6 +16,7 @@ def surface_env(scope="function"):
     set_env = pg.display.set_mode((200, 200))
     yield set_env
     # pg.quit()
+"""
 
 
 class _ObjClass(default_engine.DefaultEngine):
@@ -28,10 +29,15 @@ def class_default_engine():
     return new_class
 
 
-def test_default_engine_attr(class_default_engine, surface_env):
+@pytest.mark.skip(reason="unskip this test if you're not using travis CI.")
+def test_surface_env(surface_env):
     # the screen should not be none.
     assert surface_env is not None
     assert surface_env.get_size() == (200, 200)
+
+
+def test_default_engine_attr(class_default_engine):
+
     assert isinstance(class_default_engine, default_engine.DefaultEngine)
     assert class_default_engine.running is True
     assert class_default_engine.playing is False

@@ -2,6 +2,7 @@ import pygame
 import pytest
 
 
+@pytest.mark.skip(reason="unskip this test if you're not using travis CI.")
 def test_environment_class():
     # test if we had display
     assert pygame.display.get_init() == 1

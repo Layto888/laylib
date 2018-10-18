@@ -99,7 +99,8 @@ class PersistenceManager(object):
     """
     _PARSER_VERSION = '0.2.1'
     # class constants:
-    IMAGE_TYPE = ['bmp', 'jpg', 'png', 'jpeg', 'tiff', 'gif', 'ico']
+    IMAGE_TYPE = ['bmp', 'jpg', 'png', 'jpeg', 'tif', 'pgm'
+                  'gif', 'pcx', 'tga', 'lbm', 'pbm', 'xpm']
     IMAGE_TYPE += [x.upper() for x in IMAGE_TYPE]
     MUSIC_TYPE = ['mp3', 'wma', 'flac']
     MUSIC_TYPE += [x.upper() for x in MUSIC_TYPE]

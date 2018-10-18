@@ -29,6 +29,18 @@ FONT_SIZE = 1
 logging.basicConfig(level=logging.ERROR,
                     format='%(levelname)s: %(message)s')
 
+"""
+Use these values to parametrize:
+
+- The fx volume sound
+- The music volume
+- The font size
+"""
+
+DEFAULT_FX_VOLUME = 0.8
+DEFAULT_MUSIC_VOLUME = 2.0
+DEFAULT_FONT_SIZE = 20
+
 
 class Resources(object):
     """ Resources manager:
@@ -108,10 +120,6 @@ class PersistenceManager(object):
     FX_TYPE += [x.upper() for x in FX_TYPE]
     FONT_TYPE = ['ttf', 'otf', 'ttc']
     FONT_TYPE += [x.upper() for x in FONT_TYPE]
-    # theses values could be edited directly from this class.
-    DEFAULT_FX_VOLUME = 0.8
-    DEFAULT_MUSIC_VOLUME = 2.0
-    DEFAULT_FONT_SIZE = 20
 
     def __init__(self, folder='data'):
         self.parser = {
@@ -144,13 +152,13 @@ class PersistenceManager(object):
             if ext in self.IMAGE_TYPE:
                 self.parser["imgList"].append(file)
             elif ext in self.MUSIC_TYPE:
-                conf_file = [file, self.DEFAULT_MUSIC_VOLUME]
+                conf_file = [file, DEFAULT_MUSIC_VOLUME]
                 self.parser["mscList"].append(conf_file)
             elif ext in self.FX_TYPE:
-                conf_file = [file, self.DEFAULT_FX_VOLUME]
+                conf_file = [file, DEFAULT_FX_VOLUME]
                 self.parser["sndList"].append(conf_file)
             elif ext in self.FONT_TYPE:
-                conf_file = [file, self.DEFAULT_FONT_SIZE]
+                conf_file = [file, DEFAULT_FONT_SIZE]
                 self.parser["fntList"].append(conf_file)
             else:
                 self.parser["other"].append(file)

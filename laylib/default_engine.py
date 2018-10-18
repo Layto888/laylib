@@ -128,6 +128,8 @@ class DefaultEngine(object):
         demo.load_complete() function. (see main file examples).
         """
         self.res = Resources(dataFolder)
+        # automatic update res file with save.
+        self.res.save(persistenceLayer)
         data = self.res.get(persistenceLayer)
         self.img = self.res.img.loadGroup(data['imgList'], True)
         self.snd = self.res.snd.loadGroup(data['sndList'])

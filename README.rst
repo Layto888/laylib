@@ -76,10 +76,10 @@ TODO
  - [x] improve util.py module
  - [x] add more examples for demo
 
+
 Release History
 ---------------
 * 1.1.5
-    
     * in Resources manager: the sound format .ogg is moved to Music class and removed from 	 Sound 'fx' class.
     * relative path to test_laylib changed
     * variable self.all_sprites = pg.sprite.Group() set directly in the DefaultEngine class.

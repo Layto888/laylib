@@ -21,19 +21,18 @@ class Engine(DefaultEngine):
             - self.msc -> will contains the whole music (mp3, ogg)
             - self.fnt -> will contains the whole fonts (ttf..)
 
-        4) - now we override the function draw to print the resources loaded as demo:
+        4)- now we override the function draw to print the resources loaded as demo:
             - see the function draw().
 
-        - ANY need to manage resources manually:
-          The thing is to put your resources in the data folder and they will be ready to use.
+     ANY need to manage resources manually:
+     The thing is to put your resources in the data folder and they will be ready to use.
 
     """
 
     def __init__(self):
         super().__init__()
-        self.new_demo()
-        self.all_sprites = pg.sprite.Group()
         self.text_pos = POS_Y
+        self.new_demo()
 
     def update(self):
         self.clock.tick(FPS)

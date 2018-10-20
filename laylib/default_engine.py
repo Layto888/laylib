@@ -78,8 +78,8 @@ class DefaultEngine(object):
         self.screen = pg.display.get_surface()
         self.dt = 0.0
         self.clock = pg.time.Clock()
-        self.img = self.snd = self.fnt = None
-        self.all_sprites = None
+        self.img = self.snd = self.fnt = self.msc = None
+        self.all_sprites = pg.sprite.Group()
         self._time_unit = 1000.0
 
     """

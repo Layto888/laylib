@@ -1,7 +1,14 @@
 # test module default_engine.py
 import pytest
 import logging
-import pygame as pg
+import os
+import inspect
+import sys
+
+current_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parent_dir = os.path.dirname(current_dir)
+sys.path.insert(0, parent_dir)
+
 from laylib import default_engine
 
 logging.basicConfig(level=logging.INFO,

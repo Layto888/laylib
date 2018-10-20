@@ -82,9 +82,10 @@ def test_save_get_parser(class_resources, folder_data):
         # test get infos:
         data = res.get('bar.bin')
 
-        for k in data:
+        for k in data.keys():
             if k != 'other':
-                assert data[k] in folder_data.values()
+                for element in data[k]:
+                    assert element in folder_data[k]
         os.remove('test_laylib/data_test/bar.bin')
 
 

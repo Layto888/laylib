@@ -4,7 +4,7 @@ laylib package for pygame
 .. image:: https://img.shields.io/badge/License-MIT-yellow.svg
 	:target: https://opensource.org/licenses/MIT
 
-.. image:: https://img.shields.io/badge/version-1.1.4-red.svg
+.. image:: https://img.shields.io/badge/version-1.1.5-red.svg
 	:target: https://pypi.org/project/laylib
 
 .. image:: https://travis-ci.org/Layto888/laylib.svg?branch=master
@@ -79,7 +79,13 @@ TODO
 Release History
 ---------------
 * 1.1.5
-    * Work in progress...
+    
+    * in Resources manager: the sound format .ogg is moved to Music class and removed from 	 Sound 'fx' class.
+    * relative path to test_laylib changed
+    * variable self.all_sprites = pg.sprite.Group() set directly in the DefaultEngine class.
+    * add demo1 example to show how to manage resources with laylib
+    * updating test_laylib for the 1.1.5 version
+    * update documentation in the source files.
 * 1.1.4
     * Add Travis CI file
     * bug fix rotate function util.py file

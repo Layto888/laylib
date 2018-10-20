@@ -20,12 +20,13 @@ def class_resources(scope="function"):
 def folder_data(scope="function"):
     _data = {
 
-        'mscList': [['RoyaltyMusic.MP3', 2.0]],
+        'mscList': [['RoyaltyMusic.MP3', 1.0]],
         'imgList': ['bird_800.jpg'],
         'sndList': [],
         'fntList': [['Rockout.otf', 20]],
-        'version': '0.2.1',
-        'other': ['bar.bin']
+        'version': '0.2.2',
+        'other': ['bar.bin'],
+	'unknown':[]
     }
     return _data
 

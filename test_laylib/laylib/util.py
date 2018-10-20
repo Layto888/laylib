@@ -6,7 +6,7 @@ from pygame.math import Vector2 as vect2d
 """
 util Desc file: n (0.2):
 lib for rapid prototyping games,
-contain some useful functions like dstance between two vectors.
+contain some useful functions like distance between two vectors.
 Date:       12/07/2017
 Author:     Amardjia Amine (Goutted)
 """

@@ -78,8 +78,8 @@ class DefaultEngine(object):
         self.screen = pg.display.get_surface()
         self.dt = 0.0
         self.clock = pg.time.Clock()
-        self.img = self.snd = self.fnt = None
-        self.all_sprites = None
+        self.img = self.snd = self.fnt = self.msc = None
+        self.all_sprites = pg.sprite.Group()
         self._time_unit = 1000.0
 
     """
@@ -128,6 +128,8 @@ class DefaultEngine(object):
         demo.load_complete() function. (see main file examples).
         """
         self.res = Resources(dataFolder)
+        # automatic update res file with save.
+        self.res.save(persistenceLayer)
         data = self.res.get(persistenceLayer)
         self.img = self.res.img.loadGroup(data['imgList'], True)
         self.snd = self.res.snd.loadGroup(data['sndList'])

@@ -4,9 +4,7 @@
             images, fonts..etc and some util-functions to print text in
             the screen & stuffs like that.
 TODO:
-            - improve  music class (play list choose...)
             - manage the image.set_colorkey((255, 255, 255)) for transparency
-            - pytest module for resources.
             - add description of how to parse data and create persistence layer
             - add setter method for constants:
                                                 DEFAULT_FX_VOLUME
@@ -27,9 +25,24 @@ SOUND_TITLE = 0
 SOUND_VOLUME = 1
 FONT_NAME = 0
 FONT_SIZE = 1
+# parser slipted to name, split_arg[_EXT]
+_NAME = 0
+_EXT = 1
 
 logging.basicConfig(level=logging.ERROR,
                     format='%(levelname)s: %(message)s')
+
+"""
+Use these values to parametrize:
+
+- The fx volume sound
+- The music volume
+- The font size
+"""
+
+DEFAULT_FX_VOLUME = 0.8
+DEFAULT_MUSIC_VOLUME = 1.0
+DEFAULT_FONT_SIZE = 20
 
 
 class Resources(object):
@@ -99,20 +112,17 @@ class PersistenceManager(object):
     - load the persitence layer and return the data structure
     - The file is created into a binary format using pickle module.
     """
-    _PARSER_VERSION = '0.2.1'
+    _PARSER_VERSION = '0.2.2'
     # class constants:
-    IMAGE_TYPE = ['bmp', 'jpg', 'png', 'jpeg', 'tiff', 'gif', 'ico']
+    IMAGE_TYPE = ['bmp', 'jpg', 'png', 'jpeg', 'tif', 'pgm'
+                  'gif', 'pcx', 'tga', 'lbm', 'pbm', 'xpm']
     IMAGE_TYPE += [x.upper() for x in IMAGE_TYPE]
-    MUSIC_TYPE = ['mp3', 'wma', 'flac']
+    MUSIC_TYPE = ['mp3', 'wma', 'ogg']
     MUSIC_TYPE += [x.upper() for x in MUSIC_TYPE]
-    FX_TYPE = ['ogg', 'wav', 'midi']
+    FX_TYPE = ['wav', 'midi']
     FX_TYPE += [x.upper() for x in FX_TYPE]
     FONT_TYPE = ['ttf', 'otf', 'ttc']
     FONT_TYPE += [x.upper() for x in FONT_TYPE]
-    # theses values could be edited directly from this class.
-    DEFAULT_FX_VOLUME = 0.8
-    DEFAULT_MUSIC_VOLUME = 2.0
-    DEFAULT_FONT_SIZE = 20
 
     def __init__(self, folder='data'):
         self.parser = {
@@ -121,7 +131,8 @@ class PersistenceManager(object):
             'sndList': [],
             'mscList': [],
             'fntList': [],
-            'other': []
+            'other': [],
+            'unknown': []
         }
         self.pp = pprint.PrettyPrinter(indent=4)
         self.files_list = os.listdir(folder)
@@ -141,20 +152,24 @@ class PersistenceManager(object):
         self.parser["version"] = str(self._PARSER_VERSION)
 
         for file in self.files_list:
-            name, ext = file.split('.')
-            if ext in self.IMAGE_TYPE:
-                self.parser["imgList"].append(file)
-            elif ext in self.MUSIC_TYPE:
-                conf_file = [file, self.DEFAULT_MUSIC_VOLUME]
-                self.parser["mscList"].append(conf_file)
-            elif ext in self.FX_TYPE:
-                conf_file = [file, self.DEFAULT_FX_VOLUME]
-                self.parser["sndList"].append(conf_file)
-            elif ext in self.FONT_TYPE:
-                conf_file = [file, self.DEFAULT_FONT_SIZE]
-                self.parser["fntList"].append(conf_file)
+            split_arg = file.split('.')
+            # check if the file got '.ext' or not (parser version 0.2.2)
+            if len(split_arg) < 2:
+                self.parser["unknown"].append(file)
             else:
-                self.parser["other"].append(file)
+                if split_arg[_EXT] in self.IMAGE_TYPE:
+                    self.parser["imgList"].append(file)
+                elif split_arg[_EXT] in self.MUSIC_TYPE:
+                    conf_file = [file, DEFAULT_MUSIC_VOLUME]
+                    self.parser["mscList"].append(conf_file)
+                elif split_arg[_EXT] in self.FX_TYPE:
+                    conf_file = [file, DEFAULT_FX_VOLUME]
+                    self.parser["sndList"].append(conf_file)
+                elif split_arg[_EXT] in self.FONT_TYPE:
+                    conf_file = [file, DEFAULT_FONT_SIZE]
+                    self.parser["fntList"].append(conf_file)
+                else:
+                    self.parser["other"].append(file)
 
     def _resources_get(self, persistence_file):
         """ load binary """

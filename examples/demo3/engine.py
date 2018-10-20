@@ -8,7 +8,6 @@ class Game(DefaultEngine):
 
     def __init__(self):
         super().__init__()
-        self.all_sprites = pg.sprite.Group()
 
     def new_demo(self):
         pg.mixer.music.play()

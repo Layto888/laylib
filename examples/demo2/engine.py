@@ -18,15 +18,14 @@ class Engine(DefaultEngine):
 
     Engine example: animation of rectangle with keyboard.
     Use arrows keys and Return to move bodies.
-	- This class inherit from the DefaultEngine.
+    - This class inherit from the DefaultEngine.
     """
 
     def __init__(self):
         super().__init__()
-        
+        self.new_demo()
+
     def update(self):
-        if not self.playing and self.running:
-            self.new_demo()
         self.all_sprites.update(self.dt)
         self.clock.tick(FPS)
 
@@ -79,7 +78,7 @@ class Body(pg.sprite.Sprite):
         self.vel = vect2d(0.0, 0.0)
 
 
-def bondary_limit(position: vect2d) -> None:
+def bondary_limit(position):
     """keep any object inside the screen"""
 
     if position.x < 0:

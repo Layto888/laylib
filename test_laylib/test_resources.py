@@ -18,16 +18,29 @@ def class_resources(scope="function"):
 
 @pytest.fixture
 def folder_data(scope="function"):
-    _data = {
-
-        'mscList': [['RoyaltyMusic.MP3', 1.0]],
-        'imgList': ['bird_800.jpg'],
-        'sndList': [],
-        'fntList': [['Rockout.otf', 20]],
-        'version': '0.2.2',
-        'other': ['bar.bin'],
-	'unknown':[]
-    }
+    _data = {'fntList': [['secrcode.ttf', 20]],
+             'imgList': ['circle_pop-5.png',
+                         'circle_pop-4.png',
+                         'circle_pop-2.png',
+                         'circle_pop-6.png',
+                         'circle_pop-10.png',
+                         'rotator.png',
+                         'circle.png',
+                         'circle_pop-8.png',
+                         'circle_pop-11.png',
+                         'circle_pop-0.png',
+                         'circle_pop-3.png',
+                         'circle_pop-12.png',
+                         'circle_pop-1.png',
+                         'circle_pop-9.png',
+                         'circle_pop-7.png'],
+             'mscList': [['pop.ogg', 1.0], ['WhereWasI.ogg', 1.0]],
+             'other': [],
+             'sndList': [['bounce.wav', 0.8],
+                         ['bounce_wall.wav', 0.8],
+                         ['score.wav', 0.8]],
+             'unknown': ['LICENSES'],
+             'version': '0.2.2'}
     return _data
 
 

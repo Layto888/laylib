@@ -78,7 +78,8 @@ TODO
 
 Release History
 ---------------
-
+* 1.1.5
+    * Work in progress...
 * 1.1.4
     * Add Travis CI file
     * bug fix rotate function util.py file

@@ -23,8 +23,7 @@ class Engine(DefaultEngine):
 
     def __init__(self):
         super().__init__()
-        self.all_sprites = pg.sprite.Group()
-
+        
     def update(self):
         if not self.playing and self.running:
             self.new_demo()

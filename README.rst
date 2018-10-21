@@ -40,6 +40,8 @@ Usage example
     if __name__ == "__main__":
 	main()
 
+For usage see examples provided with laylib. 
+For more details, all other parts of documentation are described in the source file.
 	
 INSTALLATION
 ------------
@@ -61,11 +63,6 @@ Then install laylib:
 
 Or alternatively, you can just copy the "laylib" folder into the same
 directory as the Python program that uses it.
-
-USAGE
------
-For usage see examples provided with laylib. 
-For more details, all other parts of documentation are described in the source file.
 
 Release History
 ---------------

@@ -1,21 +1,21 @@
 """
-laylib-pygame usage example: no resources example
+laylib-pygame usage example: no resources example with a particle system.
+Use the mouse to control particles.
+
 Author: Amardjia Amine
-Date: 01/08/18
-Github: ---
+Date: 24/10/2018
+Github: -
 """
 from laylib import Environment
-from engine import Engine, WIDTH, HEIGHT
+from engine import Engine
 
 
 def main():
-    # init global environment
-    demo = Environment(WIDTH, HEIGHT, False, 'No resources demo')
+    demo = Environment(600, 600, False, 'No resources demo')
     # with no resources, just call your main engine.
     demo.load_complete(Engine())
-    # play
+    # particles simulation
     demo.gInstance.main_loop()
-    # quit the game
     demo.destroy()
 
 

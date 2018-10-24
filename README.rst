@@ -33,7 +33,7 @@ Usage example
 
     def main():
 	demo = Environment(800, 600, False, 'My game')
-	demo.load_complete(Engine(), 'data', 'resources.res')
+	demo.load_complete(Engine(), 'data', 'resources.bin')
 	demo.gInstance.main_loop()
 	demo.destroy()
 

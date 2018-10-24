@@ -1,7 +1,8 @@
 import pygame as pg
-from random import randint, uniform
 from pygame.math import Vector2 as vect2d
 from laylib import DefaultEngine
+from random import randint, uniform
+
 
 """
 All settings:

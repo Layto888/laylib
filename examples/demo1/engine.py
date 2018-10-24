@@ -1,8 +1,8 @@
 import pygame as pg
 from laylib import DefaultEngine
 
-FPS = 30
-POS_Y = 22
+FPS = 25
+POS_Y = 23
 BLACK = (0, 0, 0)
 
 
@@ -16,13 +16,13 @@ class Engine(DefaultEngine):
         2)- create a class named engine or whatever, this class represents your main
         game engine.
         3)- the DefaultEngine class will automatically load and separate resources types for you:
-            - self.img -> will contains the whole images
-            - self.snd -> will contains the whole fx sounds (wav, midi...)
-            - self.msc -> will contains the whole music (mp3, ogg)
-            - self.fnt -> will contains the whole fonts (ttf..)
+            - self.img -> will contain the whole images
+            - self.snd -> will contain the whole fx sounds (wav, midi...)
+            - self.msc -> will contain the whole music (mp3, ogg)
+            - self.fnt -> will contain the whole fonts (ttf..)
 
-        4)- now we override the function draw to print the resources loaded as demo:
-            - see the function draw().
+        4)- now we override the function DefaultEngine.draw to print the resources loaded as demo:
+            - see the function DefaultEngine.draw()
 
      ANY need to manage resources manually:
      The thing is to put your resources in the data folder and they will be ready to use.
@@ -39,12 +39,13 @@ class Engine(DefaultEngine):
 
     def draw(self):
         self.text_pos = POS_Y
+        self.res.fnt.render(self.fnt[0], 'Loaded Data:', (1, 1))
 
         for res_file in self.res.pm.parser:
             for data in self.res.pm.parser[res_file]:
                 if res_file != 'version':
                     self.res.fnt.render(
-                        self.fnt[0], '{}: {} \n'.format(
+                        self.fnt[0], '{}: {}'.format(
                             res_file, data), (1, self.text_pos)
                     )
                     self.text_pos += POS_Y

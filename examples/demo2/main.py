@@ -11,7 +11,7 @@ from engine import Engine, WIDTH, HEIGHT
 def main():
     # init global environment
     demo = Environment(WIDTH, HEIGHT, False, 'No resources demo')
-    # with no resources, just call your game engine.
+    # with no resources, just call your main engine.
     demo.load_complete(Engine())
     # play
     demo.gInstance.main_loop()

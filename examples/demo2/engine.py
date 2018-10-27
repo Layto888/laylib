@@ -29,7 +29,7 @@ BLACK = (0, 0, 0)
 class Engine(DefaultEngine):
     """ Short summary.
     Engine example: A mini particles system, using laylib.
-    This demo show how to use laylib when you have any resource file to load
+    This demo shows how to use laylib when you have no resource file to load
     (see the main file)
     """
 

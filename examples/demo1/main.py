@@ -6,8 +6,10 @@ Author: Amardjia Amine
 Date: 20/10/18
 Github: ---
 
-- This demo show how the Resources manager loads and
+- This demo shows how the Resources manager loads and
   separates the different data and their associated variables.
+
+  All resources are showed in the terminal after running your program.
 """
 
 from laylib import Environment
@@ -24,7 +26,7 @@ def main():
         '2D Demo'  # window title
     )
     # load resources, set the game
-    demo.load_complete(Engine(), 'data', 'resources.res')
+    demo.load_complete(Engine(), '../data', 'resources.bin')
     # play
     demo.gInstance.main_loop()
     # quit the game

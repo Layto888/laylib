@@ -21,7 +21,7 @@ default engine.
          By default the pygame display,the mixer and the font are initialized.
 
      2)- load_complete(self, instance, dataFolder=None, fileLevels=None):
-         This is the second method to call on your main file
+         This is the second thing to call on your main file
          to load your resources if any.(see load_complete for parameters
          description).
 
@@ -41,7 +41,7 @@ default engine.
 >>>
 >>> def main():
 >>>     demo = Environment(800, 600, False, 'My game')
->>>     demo.load_complete(Engine(), 'data', 'resources.res')
+>>>     demo.load_complete(Engine(), 'data', 'resources.bin')
 >>>     demo.gInstance.main_loop()
 >>>     demo.destroy()
 

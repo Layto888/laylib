@@ -26,37 +26,36 @@ self.img, self.snd, self.fnt:
 these variables contain the whole resources data your game need.
 
 
----------------------------------
-[B] - PUBLIC METHODS TO OVERRIDE:
----------------------------------
+----------------------
+[B] - PUBLIC METHODS:
+---------------------
 1)- def update():
 override this function in your main engine class to update your whole game.
 
 2)- def draw():
 override this function in your main engine class to draw the whole graphics.
 
+3) - def main_loop():
+Is the global loop to manage event, update and draw all stuffs.
+this function is called on the main function. (see example demo)
 
 ----------------------------
 [C] - PRIVATE METHODS:
 ----------------------------
-1) - def main_loop():
-Is the global loop to manage event, update and draw all stuffs.
-this function is called on the main function.
-
-2) - def event_listener():
+1) - def event_listener():
 Control the main event of the window:
 Use key 'ESC' to quit.
 Use variable 'self.playing' to exit the main loop of the game (ex:to pause)
 
-3) - load_game(self, dataFolder, persistenceLayer):
+2) - load_game(self, dataFolder, persistenceLayer):
 this function is called automatically and
 will load all the resources found in the data folder of resources.
 
-4) - load_levels(self, dataFolder, fileLevels) :
-this function if your game contain file levels or file,
-best score or any save.
+3) - load_levels(self, dataFolder, fileLevels) :
+if your game contain file levels or data structure,
+best score or any save, use it.
 
-5)- destroy_game(self):
+4)- destroy_game(self):
 called by default to destroy all resources.
 
 (see examples folder for some usage example).
@@ -83,7 +82,7 @@ class DefaultEngine(object):
         self._time_unit = 1000.0
 
     """
-    time unit decorators to modify the delta time
+    time unit decorators to modify the delta time unit (ms - s)
     """
     @property
     def time_unit(self):

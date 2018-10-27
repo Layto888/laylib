@@ -2,7 +2,7 @@ import pygame as pg
 from laylib import DefaultEngine
 
 FPS = 25
-POS_Y = 23
+POS_Y = 22
 BLACK = (0, 0, 0)
 
 

@@ -36,12 +36,12 @@ logging.basicConfig(level=logging.ERROR,
 Use these values to parametrize:
 
 - The fx volume sound
-- The music volume
+- The music volume (obsolete, now we use the function .play() Music class to control that)
 - The font size
 """
 
 DEFAULT_FX_VOLUME = 0.8
-DEFAULT_MUSIC_VOLUME = 1.0
+DEFAULT_MUSIC_VOLUME = 0.5
 DEFAULT_FONT_SIZE = 20
 
 
@@ -86,7 +86,7 @@ class Resources(object):
 
     def save(self, fileName):
         """
-        to automate the creation of persistence file of resources
+        automate the creation of persistence file of resources
         call this method.
         """
         fileName = os.path.join(self.data_folder, fileName)
@@ -259,7 +259,8 @@ class Sound(object):
 
 class Music(object):
     """
-    for mixer music mp3: return the titles as list of string
+    for mixer music ogg/mp3: returns the titles as list of string
+    Use the function play() to control your playlist.
     """
 
     def __init__(self, data_folder):
@@ -270,17 +271,24 @@ class Music(object):
         playlist = []
         for title in musicList:
             playlist.append(os.path.join(self.data_folder, title[SOUND_TITLE]))
-        # queue
-        if playlist:
-            first_music = playlist[0]
-            pg.mixer.music.load(first_music)
-        for track in playlist:
-            if track != first_music:
-                pg.mixer.music.queue(track)
         return playlist
 
-    def play(self, loops=0, start=0.0):
-        pg.mixer.music.play()
+    def play(self, title=None, volume=DEFAULT_MUSIC_VOLUME, n_time=0):
+        """
+        play music with params :
+        1. the title of the sound: self.msc[x] with x: the index of music in queue.
+        2. the volume [0.0 - 1.0]
+        3. n_time 0, play it once
+        """
+        if title:
+            # stop music playing if any
+            pg.mixer.music.stop()
+            # load new title & set up
+            pg.mixer.music.load(title)
+            if volume < 0.0 or volume > 1.0:
+                volume = DEFAULT_MUSIC_VOLUME
+            pg.mixer.music.set_volume(volume)
+            pg.mixer.music.play(loops=n_time)
 
 
 class Font(object):

@@ -4,7 +4,7 @@ laylib package for pygame
 .. image:: https://img.shields.io/badge/License-MIT-yellow.svg
 	:target: https://opensource.org/licenses/MIT
 
-.. image:: https://img.shields.io/badge/version-1.1.5-red.svg
+.. image:: https://img.shields.io/badge/version-1.1.6-red.svg
 	:target: https://pypi.org/project/laylib
 
 .. image:: https://travis-ci.org/Layto888/laylib.svg?branch=master
@@ -12,8 +12,8 @@ laylib package for pygame
 
 
 This package is made to fast prototype your multimedia applications like games on pygame. 
-Write clean and pragmatic design. It lets you focus on the game engine itself, so you dont have
-to take care about several details like setting up the window, loading and cheking data (images,
+Write clean and pragmatic design. It lets you focus on the game engine itself, so you don't have
+to take care about several details like setting up the window, loading and checking data (images,
 sound, font, fx, music, resources names...).
 All you need to do is to put your resources into a specific data folder and use them 
 in your game class 'MyEngine()'.
@@ -66,8 +66,14 @@ directory as the Python program that uses it.
 
 Release History
 ---------------
+
+* 1.1.6
+    * class Music in resources.py: add the function play() to control the music playlist and the volume
+    * update demo1 to integrate music play() function.
+    * all private methods prefixed with underscore
+    * one common data folder for test and demo, to reduce size.
 * 1.1.5
-    * in Resources manager: the sound format .ogg is moved to Music class and removed from 	 Sound 'fx' class.
+    * in Resources manager: the sound format .ogg is moved to Music class and removed from Sound 'fx' class.
     * relative path to test_laylib changed
     * variable self.all_sprites = pg.sprite.Group() set directly in the DefaultEngine class.
     * add demo1 example to show how to manage resources with laylib
@@ -95,8 +101,3 @@ Meta
 ----
 Amardjia Amine – amardjia.amine@gmail.com
 Distributed under the MIT license.
-
-
-
-
-

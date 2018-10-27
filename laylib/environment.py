@@ -4,15 +4,15 @@
 @Licence: MIT
 
 
-This package is made to fast prototype your multimedia applications like games on pygame.
+This package is made to fast prototype your multimedia applications like games on pygame. 
 Write clean and pragmatic design. It lets you focus on the game engine itself, so you don't have
 to take care about several details like setting up the window, loading and checking data (images,
 sound, font, fx, music, resources names...).
-All you need to do is to put your resources into a specific data folder and use them
+All you need to do is to put your resources into a specific data folder and use them 
 in your game class 'MyEngine()'.
 
-You don't need to reinvent the wheel, some repetitive parts of code (main loop, getting the delta time,
-closing the window, drawing text...) are already described and ready to use in the
+You don't need to reinvent the wheel, some repetitive parts of code (main loop, getting the delta time, 
+closing the window, drawing text...) are already described and ready to use in the 
 default engine.
 
      1)- Environment class:
@@ -51,7 +51,7 @@ default engine.
 """
 
 
-__version__ = "1.1.5"
+__version__ = "1.1.6"
 
 import pygame as pg
 import logging

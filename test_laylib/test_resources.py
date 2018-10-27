@@ -9,7 +9,7 @@ from laylib import resources as rc
 
 @pytest.fixture
 def class_resources(scope='module'):
-    res_class = rc.Resources('test_laylib/data_test')
+    res_class = rc.Resources('examples/data')
     yield res_class
 
 
@@ -46,7 +46,7 @@ def folder_data(scope='module'):
 
 def test_res_attr(class_resources):
     res = class_resources
-    assert res.data_folder == 'test_laylib/data_test'
+    assert res.data_folder == 'examples/data'
     assert res.global_data is None
     assert res.pm is not None
     for k in res.pm.parser.keys():
@@ -63,22 +63,22 @@ def test_jsave_jget_info(class_resources, folder_data):
     # test METHOD1 parser Manual: save infos
     res = class_resources
     res.jsave_info(folder_data, 'foo.txt', True)
-    assert os.path.isfile('test_laylib/data_test/foo.txt')
+    assert os.path.isfile('examples/data/foo.txt')
     # test load infos
-    if os.path.exists('test_laylib/data_test/foo.txt'):
+    if os.path.exists('examples/data/foo.txt'):
         # test get infos:
         data = res.jget_info('foo.txt')
         assert data == folder_data
-        os.remove('test_laylib/data_test/foo.txt')
+        os.remove('examples/data/foo.txt')
 
 
 def test_save_get_parser(class_resources, folder_data):
     # test METHOD2 parser Auto: save infos
     res = class_resources
     res.save('bar.bin')
-    assert os.path.isfile('test_laylib/data_test/bar.bin')
+    assert os.path.isfile('examples/data/bar.bin')
     # test load infos
-    if os.path.exists('test_laylib/data_test/bar.bin'):
+    if os.path.exists('examples/data/bar.bin'):
         # test get infos:
         data = res.get('bar.bin')
 
@@ -86,7 +86,7 @@ def test_save_get_parser(class_resources, folder_data):
             if k != 'other':
                 for element in data[k]:
                     assert element in folder_data[k]
-        os.remove('test_laylib/data_test/bar.bin')
+        os.remove('examples/data/bar.bin')
 
 
 @pytest.mark.skip(reason="stdout print")

@@ -11,6 +11,8 @@ laylib package for pygame
 	:target: https://travis-ci.org/Layto888/laylib
 
 
+ 
+
 This package is made to fast prototype your multimedia applications like games on pygame. 
 Write clean and pragmatic design. It lets you focus on the game engine itself, so you don't have
 to take care about several details like setting up the window, loading and checking data (images,
@@ -33,15 +35,13 @@ Usage example
 
     def main():
 	demo = Environment(800, 600, False, 'My game')
-	demo.load_complete(Engine(), 'data', 'resources.bin')
+	demo.load_complete(Engine(), 'data', 'resources.res')
 	demo.gInstance.main_loop()
 	demo.destroy()
 
     if __name__ == "__main__":
 	main()
 
-For usage see examples provided with laylib. 
-For more details, all other parts of documentation are described in the source file.
 	
 INSTALLATION
 ------------
@@ -64,9 +64,13 @@ Then install laylib:
 Or alternatively, you can just copy the "laylib" folder into the same
 directory as the Python program that uses it.
 
+USAGE
+-----
+For usage see examples provided with laylib. 
+For more details, all other parts of documentation are described in the source file.
+
 Release History
 ---------------
-
 * 1.1.6
     * class Music in resources.py: add the function play() to control the music playlist and the volume
     * update demo1 to integrate music play() function.
@@ -97,7 +101,13 @@ Release History
     * The first proper release
 * 0.0.1
     * Work in progress
+
 Meta
 ----
 Amardjia Amine – amardjia.amine@gmail.com
 Distributed under the MIT license.
+
+
+
+
+

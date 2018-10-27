@@ -42,20 +42,20 @@ this function is called on the main function. (see example demo)
 ----------------------------
 [C] - PRIVATE METHODS:
 ----------------------------
-1) - def event_listener():
+1) - def _event_listener():
 Control the main event of the window:
 Use key 'ESC' to quit.
 Use variable 'self.playing' to exit the main loop of the game (ex:to pause)
 
-2) - load_game(self, dataFolder, persistenceLayer):
+2) - _load_game(self, dataFolder, persistenceLayer):
 this function is called automatically and
 will load all the resources found in the data folder of resources.
 
-3) - load_levels(self, dataFolder, fileLevels) :
+3) - _load_levels(self, dataFolder, fileLevels) :
 if your game contain file levels or data structure,
 best score or any save, use it.
 
-4)- destroy_game(self):
+4)- _destroy_game(self):
 called by default to destroy all resources.
 
 (see examples folder for some usage example).
@@ -98,12 +98,12 @@ class DefaultEngine(object):
     def main_loop(self):
         while self.running:
             t = pg.time.get_ticks()
-            self.event_listener()
+            self._event_listener()
             self.update()
             self.draw()
             self.dt = (pg.time.get_ticks() - t) / self._time_unit
 
-    def event_listener(self):
+    def _event_listener(self):
         """
         Manage the window quit events
         QUIT / ESCAPE : to exit the program.
@@ -118,7 +118,7 @@ class DefaultEngine(object):
                     self.playing = False
                     self.running = False
 
-    def load_game(self, dataFolder, persistenceLayer):
+    def _load_game(self, dataFolder, persistenceLayer):
         """ load resources:
         this  function fetch  and  load whatever resources we need.
         - The "dataFolder"  WILL CONTAIN the persistenceLayer file.
@@ -136,7 +136,7 @@ class DefaultEngine(object):
         self.msc = self.res.msc.get_playList(data['mscList'])
         self.res.show()
 
-    def load_levels(self, dataFolder, fileLevels):
+    def _load_levels(self, dataFolder, fileLevels):
         """
         If the prototype contain levels use this function.
         Overload this.
@@ -149,7 +149,7 @@ class DefaultEngine(object):
     def draw(self):
         pass
 
-    def destroy_game(self):
+    def _destroy_game(self):
         if self.all_sprites:
             self.all_sprites.empty()
         if self.img:

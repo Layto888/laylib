@@ -193,7 +193,7 @@ class Image(object):
     def __init__(self, data_folder):
         self.data_folder = data_folder
 
-    def load_image(self, name, alpha, scale=1.0):
+    def _load_image(self, name, alpha, scale=1.0):
         """ load an image file and enable the transparency key"""
         name = os.path.join(self.data_folder, name)
         try:
@@ -215,7 +215,7 @@ class Image(object):
         """ Load and return a list of images"""
         image = []
         for name in imgList:
-            image.append(self.load_image(name, alpha, scale))
+            image.append(self._load_image(name, alpha, scale))
         return image
 
 
@@ -227,7 +227,7 @@ class Sound(object):
     def __init__(self, data_folder):
         self.data_folder = data_folder
 
-    def load_sound(self, name, volume=1.0):
+    def _load_sound(self, name, volume=1.0):
         """load the sound fx and set it to a specific volume"""
         name = os.path.join(self.data_folder, name)
         try:
@@ -241,7 +241,7 @@ class Sound(object):
         """ load all the fx """
         sounds = []
         for snd in soundList:
-            sounds.append(self.load_sound(snd[SOUND_TITLE], snd[SOUND_VOLUME]))
+            sounds.append(self._load_sound(snd[SOUND_TITLE], snd[SOUND_VOLUME]))
         return sounds
 
     def play_fx(self, channel, sound_fx):
@@ -300,7 +300,7 @@ class Font(object):
         self.data_folder = data_folder
         self.screen = pg.display.get_surface()
 
-    def load_font(self, name, size):
+    def _load_font(self, name, size):
         """ get the font from file data """
         name = os.path.join(self.data_folder, name)
         try:
@@ -313,7 +313,7 @@ class Font(object):
         """get all the fonts """
         fonts = []
         for fnt in fntList:
-            fonts.append(self.load_font(fnt[FONT_NAME], fnt[FONT_SIZE]))
+            fonts.append(self._load_font(fnt[FONT_NAME], fnt[FONT_SIZE]))
         return fonts
 
     def render(self, font, message, vect, color=(255, 255, 255)):

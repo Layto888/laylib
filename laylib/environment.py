@@ -111,7 +111,7 @@ class Environment(object):
         -- load_complete():
         copy an instance of your game engine and use it in the main.py
 
-        1) - load_game(dataFolder, persistenceLayer):
+        1) - _load_game(dataFolder, persistenceLayer):
         this function load game resources and get infos from persistence
         layer, this function must call the Resources class to load all the
         data from the data folder.
@@ -126,26 +126,26 @@ class Environment(object):
         resources. It will be created automatically after calling the
         class Resources(data_folder).save(persistenceLayer)
 
-        2) - destroy_game(): at the end destroy all resources if necessary
+        2) - _destroy_game(): at the end destroy all resources if necessary
         3) - main_loop(): the main loop of the game(event, update, draw...
         ticks).
-        4) - load_levels(): useful if the game contains levels. optional
+        4) - _load_levels(): useful if the game contains levels. optional
         if no levels to load. keep it empty on the engine
         """
 
         # get instance of the game(The Engine() class)
         self.gInstance = instance
         if dataFolder and persistenceLayer:
-            self.gInstance.load_game(dataFolder, persistenceLayer)
+            self.gInstance._load_game(dataFolder, persistenceLayer)
         if dataFolder and fileLevels:
-            self.gInstance.load_levels(dataFolder, fileLevels)
+            self.gInstance._load_levels(dataFolder, fileLevels)
 
     def destroy(self):
         """
         destroy the environement
         """
         if self.gInstance:
-            self.gInstance.destroy_game()
+            self.gInstance._destroy_game()
         pg.mixer.quit()
         pg.font.quit()
         pg.quit()

@@ -73,7 +73,7 @@ def test_load_game():
 
 
 def test_destroy_game(class_default_engine):
-    class_default_engine.destroy_game()
+    class_default_engine._destroy_game()
     assert class_default_engine.all_sprites is not None
     assert class_default_engine.img is None
     assert class_default_engine.snd is None

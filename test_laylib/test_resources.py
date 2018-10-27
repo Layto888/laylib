@@ -2,23 +2,20 @@
 # test resources loader
 # test Music / SOund / Font classes.
 
-# TODO: with laylib the classes Sound/ Font/ MSC should
-# return None in case of empty data.
-
 import os
 import pytest
 from laylib import resources as rc
 
 
 @pytest.fixture
-def class_resources(scope="function"):
+def class_resources(scope='module'):
     res_class = rc.Resources('test_laylib/data_test')
-    return res_class
+    yield res_class
 
 
 @pytest.fixture
-def folder_data(scope="function"):
-    _data = {'fntList': [['secrcode.ttf', 20]],
+def folder_data(scope='module'):
+    _data = {'fntList': [['secrcode.ttf', 20], ['ahellya.ttf', 20]],
              'imgList': ['circle_pop-5.png',
                          'circle_pop-4.png',
                          'circle_pop-2.png',
@@ -29,19 +26,22 @@ def folder_data(scope="function"):
                          'circle_pop-8.png',
                          'circle_pop-11.png',
                          'circle_pop-0.png',
+                         'bidoubird.jpg',
                          'circle_pop-3.png',
                          'circle_pop-12.png',
                          'circle_pop-1.png',
                          'circle_pop-9.png',
                          'circle_pop-7.png'],
-             'mscList': [['pop.ogg', 1.0], ['WhereWasI.ogg', 1.0]],
-             'other': [],
+             'mscList': [['RoyaltyMusic.MP3', 0.5],
+                         ['DeserveToBeLoved.ogg', 0.5],
+                         ['WhereWasI.ogg', 0.5]],
+             'other': ['resources.bin'],
              'sndList': [['bounce.wav', 0.8],
                          ['bounce_wall.wav', 0.8],
                          ['score.wav', 0.8]],
              'unknown': ['LICENSES'],
              'version': '0.2.2'}
-    return _data
+    yield _data
 
 
 def test_res_attr(class_resources):

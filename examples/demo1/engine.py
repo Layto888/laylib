@@ -4,6 +4,7 @@ from laylib import DefaultEngine
 FPS = 25
 POS_Y = 22
 BLACK = (0, 0, 0)
+GREEN = (66, 244, 66)
 
 
 class Engine(DefaultEngine):
@@ -39,7 +40,7 @@ class Engine(DefaultEngine):
 
     def draw(self):
         self.text_pos = POS_Y
-        self.res.fnt.render(self.fnt[0], 'Loaded Data:', (1, 1))
+        self.res.fnt.render(self.fnt[0], '====== Loaded Data ======', (1, 1), GREEN)
 
         for res_file in self.res.pm.parser:
             for data in self.res.pm.parser[res_file]:

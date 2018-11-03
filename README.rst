@@ -4,7 +4,7 @@ laylib package for pygame
 .. image:: https://img.shields.io/badge/License-MIT-yellow.svg
 	:target: https://opensource.org/licenses/MIT
 
-.. image:: https://img.shields.io/badge/version-1.1.6-red.svg
+.. image:: https://img.shields.io/badge/version-1.1.7-red.svg
 	:target: https://pypi.org/project/laylib
 
 .. image:: https://travis-ci.org/Layto888/laylib.svg?branch=master
@@ -71,6 +71,9 @@ For more details, all other parts of documentation are described in the source f
 
 Release History
 ---------------
+* 1.1.7
+    * version 1.1.6 revision
+    * update demo1
 * 1.1.6
     * class Music in resources.py: add the function play() to control the music playlist and the volume
     * update demo1 to integrate music play() function.

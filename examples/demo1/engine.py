@@ -40,7 +40,8 @@ class Engine(DefaultEngine):
 
     def draw(self):
         self.text_pos = POS_Y
-        self.res.fnt.render(self.fnt[0], '====== Loaded Data ======', (1, 1), GREEN)
+        self.res.fnt.render(
+            self.fnt[0], '====== Loaded Data ======', (1, 1), GREEN)
 
         for res_file in self.res.pm.parser:
             for data in self.res.pm.parser[res_file]:

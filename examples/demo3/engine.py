@@ -15,7 +15,7 @@ class Engine(DefaultEngine):
 
     def new_demo(self):
         # let's choose the image with index = 10 ('bidoubird.jpg')
-        self.all_sprites.add(MyImage(self.img[10]))
+        self.all_sprites.add(MyImage(self.img[0]))
         # this starts the main loop
         self.playing = True
         # to count the elapsed time when playing music

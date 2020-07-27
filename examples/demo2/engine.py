@@ -16,13 +16,13 @@ Parameters:
 7. background color
 """
 
-PARTICLES_NUM = 1000
-X_MAX_SPEED = 0.0
-Y_MAX_SPEED = 10.0
-PARTICLE_DURATION = 400
-PARTICLE_RADIUS = 9
-THIKNESS = 5.0
-COLOR_RANGE = (100, 255)
+PARTICLES_NUM = 1100
+X_MAX_SPEED = 335.0
+Y_MAX_SPEED = 530.0
+PARTICLE_DURATION = 380
+PARTICLE_RADIUS = 5
+THIKNESS = 2.0
+COLOR_RANGE = (80, 255)
 BLACK = (0, 0, 0)
 
 
@@ -63,13 +63,13 @@ class Engine(DefaultEngine):
 
     @staticmethod
     def generate_particle(old_pos):
-        pos = (old_pos[0] + uniform(-THIKNESS, THIKNESS * 2),
-               old_pos[1] + uniform(-THIKNESS, THIKNESS * 0.5))
+        pos = (old_pos[0],
+               old_pos[1])
         vel = (uniform(-X_MAX_SPEED, X_MAX_SPEED),
                uniform(-Y_MAX_SPEED, Y_MAX_SPEED))
         radius = uniform(1, PARTICLE_RADIUS)
         choice = randint(*COLOR_RANGE)
-        color = (choice, choice, choice)
+        color = (randint(*COLOR_RANGE), randint(*COLOR_RANGE), choice)
         return Particle(pos, vel, int(radius), color)
 
 

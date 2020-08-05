@@ -2,6 +2,7 @@ import pygame as pg
 from pygame.math import Vector2 as vect2d
 from laylib import DefaultEngine
 from random import randint
+from random import triangular
 from random import uniform
 
 
@@ -13,20 +14,20 @@ Parameters:
 4. speed of particles on move
 5. the duration of each particle between creation and death
 6. the radius of each particle
-7. the field of generated particle
+7. the field of generated particle [0 ~ 100]
 8. the particles colors.
 9. background color
 """
 
-PARTICLES_NUM = 1500
+PARTICLES_NUM = 2100
 SPECIAL_PARTICLES_NUM = 100
 CYCLE_NRML_PARTICLES = 70
 X_MAX_SPEED = 300.0
 Y_MAX_SPEED = 290.0
-PARTICLE_DURATION = 67
-PARTICLE_RADIUS = 4
+PARTICLE_DURATION = 59
+PARTICLE_RADIUS = 1.2
 THIKNESS = 0
-COLOR_RANGE = (80, 255)
+COLOR_RANGE = (40, 255)
 BLACK = (0, 0, 0)
 
 
@@ -83,15 +84,17 @@ class Engine(DefaultEngine):
 
     @staticmethod
     def new_particle(old_pos, duration):
-        pos = (old_pos[0] + THIKNESS,  old_pos[1] + THIKNESS)
+
+        pos = (old_pos[0] + uniform(-THIKNESS, THIKNESS * 2),
+               old_pos[1] + uniform(-THIKNESS, THIKNESS * 0.5))
         vel = (uniform(-X_MAX_SPEED, X_MAX_SPEED),
                uniform(-Y_MAX_SPEED, Y_MAX_SPEED))
 
-        radius = uniform(1, PARTICLE_RADIUS)
+        radius = triangular(0.5, PARTICLE_RADIUS, 0.4)
         choice1 = old_pos[0] % 255
         choice3 = old_pos[1] % 255
         choice2 = randint(0, 255)
-        color = (choice1, choice3, choice2)
+        color = (choice1, choice2, choice3)
         return Particle(pos, vel, int(radius), color, duration)
 
 
@@ -117,7 +120,7 @@ class Particle(object):
 
     def draw(self, screen):
         pg.draw.circle(screen, self.color,
-                       (self.x, self.y), self.radius, 0)
+                       (int(self.x), int(self.y)), self.radius, 0)
 
     def is_dead(self):
         """

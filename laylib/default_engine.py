@@ -75,11 +75,13 @@ class DefaultEngine(object):
         self.running = True
         self.playing = False
         self.screen = pg.display.get_surface()
-        self.dt = 0.0
-        self.clock = pg.time.Clock()
         self.img = self.snd = self.fnt = self.msc = None
         self.all_sprites = pg.sprite.Group()
+        # Time & FPS
         self._time_unit = 1000.0
+        self._fps = 60.0
+        self.dt = 0.0
+        self.clock = pg.time.Clock()
 
     """
     time unit decorators to modify the delta time unit (ms - s)
@@ -95,13 +97,24 @@ class DefaultEngine(object):
         else:
             self._time_unit = 1000.0
 
+    @property
+    def fps(self):
+        return self._fps
+
+    @time_unit.setter
+    def fps(self, value):
+        if value > 0.0:
+            self._fps = value
+        else:
+            self._fps = 60.0
+
     def main_loop(self):
         while self.running:
             t = pg.time.get_ticks()
             self._event_listener()
             self.update()
             self.draw()
-            self.dt = (pg.time.get_ticks() - t) / self._time_unit
+            self.dt = self.clock.tick(self._fps) / self._time_unit
 
     def _event_listener(self):
         """

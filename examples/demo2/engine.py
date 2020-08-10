@@ -42,6 +42,7 @@ class Engine(DefaultEngine):
         super().__init__()
         self.new_demo()
         self.cp = 0
+        self.fps = 58.5
 
     def update(self):
         # update all the group

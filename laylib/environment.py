@@ -105,7 +105,6 @@ class Environment(object):
             self,
             instance,
             dataFolder=None,
-            persistenceLayer=None,
             fileLevels=None):
         """
         -- load_complete():
@@ -122,7 +121,7 @@ class Environment(object):
         * dataFolder: this folder contains all the resources:(sound,
         images font..etc)
 
-        * persistenceLayer: this file contains the data structure of all
+        - persistenceLayer: this file contains the data structure of all
         resources. It will be created automatically after calling the
         class Resources(data_folder).save(persistenceLayer)
 
@@ -135,8 +134,9 @@ class Environment(object):
 
         # get instance of the game(The Engine() class)
         self.gInstance = instance
-        if dataFolder and persistenceLayer:
-            self.gInstance._load_game(dataFolder, persistenceLayer)
+        if dataFolder:
+            self.gInstance._load_game(dataFolder, "persistenceLayer.bin")
+
         if dataFolder and fileLevels:
             self.gInstance._load_levels(dataFolder, fileLevels)
 

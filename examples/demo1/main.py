@@ -14,6 +14,7 @@ Github: ---
 
 from laylib import Environment
 from engine import Engine
+import sys
 
 
 def main():
@@ -26,7 +27,7 @@ def main():
         '2D Demo'  # window title
     )
     # load resources, set the game
-    demo.load_complete(Engine(), '../data', 'resources.bin')
+    demo.load_complete(Engine(), '../data')
     # play
     demo.gInstance.main_loop()
     # quit the game
@@ -34,4 +35,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

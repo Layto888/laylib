@@ -101,7 +101,7 @@ class DefaultEngine(object):
     def fps(self):
         return self._fps
 
-    @time_unit.setter
+    @fps.setter
     def fps(self, value):
         if value > 0.0:
             self._fps = value
@@ -110,7 +110,6 @@ class DefaultEngine(object):
 
     def main_loop(self):
         while self.running:
-            t = pg.time.get_ticks()
             self._event_listener()
             self.update()
             self.draw()

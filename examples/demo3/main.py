@@ -12,16 +12,17 @@ of your resources.
 
 from laylib import Environment
 from engine import Engine
+import sys
 
 
 def main():
     # setting up the env
     game = Environment(800, 600, False, 'Resources Example')
     # now we are loading resources
-    game.load_complete(Engine(), '../data', 'resources.bin')
+    game.load_complete(Engine(), '../data')
     game.gInstance.main_loop()
     game.destroy()
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

@@ -4,7 +4,7 @@ laylib package for pygame
 .. image:: https://img.shields.io/badge/License-MIT-yellow.svg
 	:target: https://opensource.org/licenses/MIT
 
-.. image:: https://img.shields.io/badge/version-1.1.7-red.svg
+.. image:: https://img.shields.io/badge/version-1.1.8-red.svg
 	:target: https://pypi.org/project/laylib
 
 .. image:: https://travis-ci.org/Layto888/laylib.svg?branch=master
@@ -70,7 +70,7 @@ For usage see examples provided with laylib.
 For more details, all other parts of documentation are described in the source file.
 
 Release History
---------------
+----------------------------
 * 1.1.8
     * version 1.1.7 revision
     * add demo4, rain demo

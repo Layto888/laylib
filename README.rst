@@ -71,6 +71,10 @@ For more details, all other parts of documentation are described in the source f
 
 Release History
 ---------------
+* 1.1.8
+    * version 1.1.7 revision
+    * add demo 4, rain demo
+	* add FPS control, now we can set fps with "self.fps" in the main engine to control frame rate. 
 * 1.1.7
     * version 1.1.6 revision
     * update demo1

@@ -25,8 +25,9 @@ closing the window, drawing text...) are already described and ready to use in t
 default engine.
 
     
-Usage example : template main file and  the main engine file
+Usage example : 
 -------------
+* Template main file
 
 .. code-block:: python
 
@@ -43,6 +44,8 @@ Usage example : template main file and  the main engine file
 	sys.exit(main())
 	
 	
+* Template engine file
+
 .. code-block:: python
 
 	import pygame as pg

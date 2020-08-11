@@ -51,7 +51,7 @@ default engine.
 """
 
 
-__version__ = "1.1.7"
+__version__ = "1.1.8"
 
 import pygame as pg
 import logging

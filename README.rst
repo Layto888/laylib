@@ -33,7 +33,7 @@ Usage example :
 
     from laylib import Environment
     from engine import Engine
-	import sys
+    import sys
 
     def main():
 	demo = Environment(800, 600, False, 'My game')

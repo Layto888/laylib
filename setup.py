@@ -12,7 +12,7 @@ setuptools.setup(
     license="MIT License",
     description="A 2-D engine for Python and pygame",
     long_description=_long_description,
-	long_description_content_type='text/markdown',
+	long_description_content_type='text/x-rst',
     author="Amardjia Amine",
     author_email="amardjia.amine@gmail.com",
     url=_url_,

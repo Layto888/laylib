@@ -12,7 +12,7 @@ import sys
 
 
 def main():
-    demo = Environment(600, 480, False, 'No resources demo')
+    demo = Environment(1024, 720, False, 'No resources demo')
     # with no resources, just call your main engine.
     demo.load_complete(Engine())
     # particles simulation

@@ -42,7 +42,7 @@ class Engine(DefaultEngine):
         super().__init__()
         self.new_demo()
         self.cp = 0
-        self.fps = 58.5
+        self.fps = 90.0
 
     def update(self):
         # update all the group
@@ -54,15 +54,14 @@ class Engine(DefaultEngine):
                 if self.cp < CYCLE_NRML_PARTICLES:
 
                     # Normal particles
-                    self.particles.append(
-                        self.new_particle(
-                            pg.mouse.get_pos(), uniform(PARTICLE_DURATION / 3.0, PARTICLE_DURATION * 3.0)))
+                    self.particles.append(self.new_particle(pg.mouse.get_pos(),
+                                                            uniform(PARTICLE_DURATION / 3.0, PARTICLE_DURATION * 3.0)))
                     self.cp += 1
                 else:
                     # specials particles : long lifetime duration
-                    self.particles.append(
-                        self.new_particle(
-                            pg.mouse.get_pos(), uniform(PARTICLE_DURATION * 9.0, PARTICLE_DURATION * 20.0)))
+                    self.particles.append(self.new_particle(pg.mouse.get_pos(),
+                                                            uniform(PARTICLE_DURATION * 9.0, PARTICLE_DURATION * 20.0)))
+
                     self.cp = 0
             particle.update(self.dt)
 

@@ -65,6 +65,9 @@ called by default to destroy all resources.
 import pygame as pg
 from laylib.resources import Resources
 
+DEFAULT_TIME_UNIT = 1000.0
+DEFAULT_FPS = 60.0
+
 
 class DefaultEngine(object):
     """
@@ -78,8 +81,8 @@ class DefaultEngine(object):
         self.img = self.snd = self.fnt = self.msc = None
         self.all_sprites = pg.sprite.Group()
         # Time & FPS
-        self._time_unit = 1000.0
-        self._fps = 60.0
+        self._time_unit = DEFAULT_TIME_UNIT
+        self._fps = DEFAULT_FPS
         self.dt = 0.0
         self.clock = pg.time.Clock()
 
@@ -92,10 +95,10 @@ class DefaultEngine(object):
 
     @time_unit.setter
     def time_unit(self, value):
-        if value > 0.0:
+        if value > 0.0 and value < (DEFAULT_TIME_UNIT * 100):
             self._time_unit = value
         else:
-            self._time_unit = 1000.0
+            self._time_unit = DEFAULT_TIME_UNIT
 
     @property
     def fps(self):
@@ -106,7 +109,10 @@ class DefaultEngine(object):
         if value > 0.0:
             self._fps = value
         else:
-            self._fps = 60.0
+            self._fps = DEFAULT_FPS
+    """
+    Public methods
+    """
 
     def main_loop(self):
         while self.running:
@@ -114,6 +120,16 @@ class DefaultEngine(object):
             self.update()
             self.draw()
             self.dt = self.clock.tick(self._fps) / self._time_unit
+
+    def update(self):
+        pass
+
+    def draw(self):
+        pass
+
+    """
+    Privates methods
+    """
 
     def _event_listener(self):
         """
@@ -153,12 +169,6 @@ class DefaultEngine(object):
         If the prototype contain levels use this function.
         Overload this.
         """
-        pass
-
-    def update(self):
-        pass
-
-    def draw(self):
         pass
 
     def _destroy_game(self):
